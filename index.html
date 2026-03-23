@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カフェ紹介サイト</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- オーバーレイ -->
+  <div class="overlay" id="overlay"></div>
+
+  <header class="header">
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="side-menu" id="sideMenu">
+      <ul>
+        <li><a href="#about" class="menu-link">ABOUT</a></li>
+        <li><a href="#cafe" class="menu-link">CAFE</a></li>
+        <li><a href="#news" class="menu-link">NEWS</a></li>
+        <li><a href="#access" class="menu-link">ACCESS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>RELAX CAFE GUIDE</h2>
+        <p class="hero-text">ゆったり過ごせるカフェをご紹介</p>
+        <p class="hero-subtext">静かな時間を楽しみたい人のためのカフェまとめサイトです。</p>
+        <a href="#cafe" class="hero-btn">カフェを見る</a>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+  <div class="container">
+    <h2>ABOUT</h2>
+    <p>
+      RELAX CAFE GUIDEは、ゆったり過ごせるカフェを探している人のための紹介サイトです。
+      一人で落ち着ける場所や、友人と過ごしやすいお店をわかりやすくまとめています。
+    </p>
+  </div>
+</section>
+
+    <section class="cafe" id="cafe">
+      <div class="container">
+        <h2>CAFE</h2>
+        <div class="cafe-list">
+          <div class="card">
+            <a href="#" target="_blank">
+              <img src="https://picsum.photos/300/200?random=1" alt="カフェ1">
+              <h3>カフェ・ルミエール</h3>
+              <p>落ち着いた空間でコーヒーを楽しめます。</p>
+              <p>営業時間：10:00〜18:00</p>
+              <p>エリア：浜松駅周辺</p>
+              <p>特徴：静か / 一人でも入りやすい</p>
+            </a>
+          </div>
+
+          <div class="card">
+            <a href="#" target="_blank">
+              <img src="https://picsum.photos/300/200?random=2" alt="カフェ2">
+              <h3>カフェ・ブリーズ</h3>
+              <p>自然光が心地よい開放的なカフェ。</p>
+              <p>営業時間：9:00〜18:00</p>
+              <p>エリア：浜松駅周辺</p>
+              <p>特徴：自然光 / 開放的</p>
+            </a>
+          </div>
+
+          <div class="card">
+            <a href="#" target="_blank">
+              <img src="https://picsum.photos/300/200?random=3" alt="カフェ3">
+              <h3>カフェ・ノワール</h3>
+              <p>家族で過ごすのに最適な雰囲気のカフェ。</p>
+              <p>営業時間：9:00〜17:00</p>
+              <p>エリア：浜松駅周辺</p>
+              <p>特徴：にぎやか / 家族連れにお勧め</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="news" id="news">
+      <div class="container">
+        <h2>NEWS</h2>
+        <ul class="news-list">
+          <li>
+            <span class="news-date">2026.03.23</span>
+            <span class="news-text">春限定メニュー特集を追加しました。</span>
+          </li>
+          <li>
+            <span class="news-date">2026.03.20</span>
+            <span class="news-text">おすすめカフェ3店舗を更新しました。</span>
+          </li>
+          <li>
+            <span class="news-date">2026.03.15</span>
+            <span class="news-text">サイトを公開しました。</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+   <section class="access" id="access">
+  <div class="container">
+    <h2>ACCESS</h2>
+    <p>エリア：浜松市周辺</p>
+
+    <div class="map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2603.3615764620554!2d137.7317447585638!3d34.704423121722!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601ade7760d07ed9%3A0xf0a52daac3b91a51!2z5rWc5p2-!5e0!3m2!1sja!2sus!4v1774246070536!5m2!1sja!2sus" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; Hamamatsu Craft Beer Fest</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const sideMenu = document.getElementById("sideMenu");
+    const overlay = document.getElementById("overlay");
+    const menuLinks = document.querySelectorAll(".menu-link");
+
+    menuBtn.addEventListener("click", function () {
+      sideMenu.classList.toggle("open");
+      overlay.classList.toggle("show");
+      menuBtn.classList.toggle("active");
+    });
+
+    overlay.addEventListener("click", function () {
+      sideMenu.classList.remove("open");
+      overlay.classList.remove("show");
+      menuBtn.classList.remove("active");
+    });
+
+    menuLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        sideMenu.classList.remove("open");
+        overlay.classList.remove("show");
+        menuBtn.classList.remove("active");
+      });
+    });
+  </script>
+</body>
+
+</html>
